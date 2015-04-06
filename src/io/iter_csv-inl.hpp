@@ -60,7 +60,7 @@ public:
   }
   virtual bool Next(void) {
     if (fscanf(fplst_, "%f", BeginPtr(labels_)) != EOF) {
-      for (int i = 1; i < label_width_; ++i){
+      for (int i = 0; i < label_width_; ++i){
         utils::Check(fscanf(fplst_, ",%f", &labels_[i]) == 1,
           "CSVIterator: Error when reading label. Possible incorrect file or label_width.");
       }
